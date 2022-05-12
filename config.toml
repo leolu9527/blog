@@ -1,10 +1,10 @@
 baseURL = "https://mdpush.com"
 DefaultContentLanguage = "en" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "zh-hans"
-title = "华子's"
+title = "华子的笔记"
 copyright = '2020 - 2022 华子 · 沪ICP备2020028465号'
 theme = "diary"
-#googleAnalytics = "G-14MZVW8C3T"
+googleAnalytics = "G-14MZVW8C3T"
 
 [markup]
 [markup.highlight]
@@ -19,8 +19,9 @@ style = "perldoc"
 tabWidth = 4
 
 [params]
-subtitle = "笔记"
-enableGitalk = true
+subtitle = ""
+favicon = "images/favicon.ico"
+enableGitalk = false
 
 # Twitter Card and Open Graph settings
 enableOpenGraph = true

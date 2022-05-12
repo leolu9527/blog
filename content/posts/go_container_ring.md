@@ -8,7 +8,7 @@ featured_image: ""
 images: []
 categories: Go学习笔记
 comment: false
-draft: true
+draft: false
 ---
 GO标准库中提供了两种链表，双向链表container/list和循环链表container/ring，链表适合快速增删而不适合快速查询。
 ## 结构定义
