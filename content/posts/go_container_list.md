@@ -54,7 +54,11 @@ func New() *List { return new(List).Init() }
 ```
 可以看到，New()调用了Init()方法，主要作用就是初始化一个链表的根元素.
 实际上，这个list是一个环状结构，初始化后root作为根元素起到连接首尾的作用，但是不存储数据。
+
+
 ![链表元素结构](/images/list_elements.png "链表元素结构")
+
+
 下面*List的两个方法Front()和Back()可以清楚的看出根元素的作用：
 ```go
 // Front returns the first element of list l or nil if the list is empty.
