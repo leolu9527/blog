@@ -98,7 +98,7 @@ func (stack *ArrayStack) Pop() (string, error) {
 当栈大小 `maxSize=0` 时为空栈，此时出栈会有`empty` error抛出，但不影响栈的继续运行。
 
 栈顶元素取出后，可以有三种方式缩容：
-1. 切片偏移量向前移动 stack.array[0 : stack.maxSize-1]，此时，切片被缩容
+1. 切片偏移量向前移动 `stack.array[0 : stack.maxSize-1]` ，此时，切片被缩容
 2. 使用内置的`copy`函数来建一个新的切片
 3. 循环赋值一个新的切片
 
