@@ -22,6 +22,7 @@ tabWidth = 4
 subtitle = ""
 favicon = "images/favicon.ico"
 enableGitalk = false
+enableLaTeX = true
 
 # Twitter Card and Open Graph settings
 enableOpenGraph = true
