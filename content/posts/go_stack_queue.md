@@ -1,7 +1,7 @@
 ---
-title: "Go 栈 Stack 和队列 Queue的简单实现"
+title: "Go数据结构 栈Stack和队列Queue的简单实现"
 date: 2022-05-13T11:35:48+08:00
-description: ""
+description: "使用Go实现简单的栈"
 tags: [Go数据结构]
 featured_image: ""
 # images is optional, but needed for showing Twitter Card

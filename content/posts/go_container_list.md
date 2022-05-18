@@ -1,7 +1,7 @@
 ---
-title: "Go 标准库container/list 双向链表"
+title: "Go数据结构 标准库container/list 双向链表"
 date: 2021-09-11T11:41:08+08:00
-description: ""
+description: "Go标准库 container/list 的使用笔记"
 tags: [Go标准库, Go数据结构]
 featured_image: ""
 # images is optional, but needed for showing Twitter Card
