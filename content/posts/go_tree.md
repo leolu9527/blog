@@ -172,7 +172,18 @@ func ConvertToArr(root *Node) []int {
 	if root == nil {
 		return []int{}
 	}
-	return indexRecursion(root, 1, 0, []int{})
+
+	result := indexRecursion(root, 1, 0, []int{})
+	// 删除末尾的0
+	for i := len(result) - 1; i >= 0; i-- {
+		if result[i] == 0 {
+			result = result[:i]
+		} else {
+			break
+		}
+	}
+
+	return result
 }
 
 // 索引循环
@@ -191,15 +202,6 @@ func indexRecursion(node *Node, level int, index int, result []int) []int {
 
 	if node.Right != nil {
 		result = indexRecursion(node.Right, level+1, 2*index+2, result)
-	}
-
-	// 删除末尾的0
-	for i := len(result) - 1; i >= 0; i-- {
-		if result[i] == 0 {
-			result = result[:i]
-		} else {
-			break
-		}
 	}
 
 	return result
