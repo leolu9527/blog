@@ -229,9 +229,7 @@ fmt.Println(result)
 
 这是一道力扣算法题 [104.二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
 
-下面给出一个递归的计算方式：
 
-### **深度优先搜索（DFS）**
 对于二叉树：
 ```
         1
@@ -240,7 +238,12 @@ fmt.Println(result)
      /   /  \
     4   5    6
 ```
-下面的递归访问的顺序是：1->2->4->3->5->6
+
+下面给出两种计算方式：
+
+### **深度优先搜索（DFS）**
+
+访问的顺序是：1->2->4->3->5->6
 
 `dfsRecursion`函数返回的切片是一个按层来排列节点的二维切片，例：`[1,[2,3],[4,5,6]]`
 
@@ -267,6 +270,46 @@ func dfsRecursion(node *Node, level int, nodes [][]int) [][]int {
 	return nodes
 }
 ```
+
+### **宽度优先搜索（BFS）**
+
+宽度优先就是从上到下，先把每一层遍历完之后再遍历一下一层。
+
+访问的顺序是：1->2->3->4->5->6
+
+我们使用 `container/list` 来模拟一个Queue，将root节点初始化进队列，然后依次**插入节点到头部**，**从尾部消耗节点**的方式来完成BFS。
+
+代码如下：
+
+```go
+func BFS(root *Node) (result [][]int) {
+	if root == nil {
+		return result
+	}
+
+	queue := list.New()
+	queue.PushFront(root)
+
+	for queue.Len() > 0 {
+		var currentLevel []int
+		listLength := queue.Len()
+		for i := 0; i < listLength; i++ {
+			node := queue.Remove(queue.Back()).(*Node)
+			currentLevel = append(currentLevel, node.Val)
+			if node.Left != nil {
+				queue.PushFront(node.Left)
+			}
+			if node.Right != nil {
+				queue.PushFront(node.Right)
+			}
+		}
+		result = append(result, currentLevel)
+	}
+
+	return result
+}
+```
+
 
 ## 附录
 代码：[https://github.com/leolu9527/go-algorithms/tree/main/tree](https://github.com/leolu9527/go-algorithms/tree/main/tree)
