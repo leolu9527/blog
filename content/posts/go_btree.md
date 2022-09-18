@@ -1,7 +1,7 @@
 ---
-title: "Go数据结构-B树"
+title: "B树原理以及Go语言简单实现"
 date: 2022-05-31T17:59:41+08:00
-description: "B树基础及Go简单实现"
+description: "B树基础原理及Go简单实现"
 tags: [数据结构, B树]
 featured_image: ""
 # images is optional, but needed for showing Twitter Card
