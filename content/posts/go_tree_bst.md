@@ -2,7 +2,7 @@
 title: "Go数据结构 二叉搜索树(BST)"
 date: 2022-05-31T17:39:27+08:00
 description: "二叉搜索树的基础"
-tags: [Go数据结构, 二叉树]
+tags: [数据结构, 二叉树]
 featured_image: ""
 # images is optional, but needed for showing Twitter Card
 images: []

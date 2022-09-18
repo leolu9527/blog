@@ -2,7 +2,7 @@
 title: "Go数据结构 树(tree) 二叉树基础"
 date: 2022-05-16T14:56:01+08:00
 description: "本文简单介绍数据结构中的树（tree),主要介绍二叉树的基础并使用Go实现二叉树的创建及数组表示。"
-tags: [Go数据结构, 二叉树]
+tags: [数据结构, 二叉树]
 featured_image: ""
 # images is optional, but needed for showing Twitter Card
 images: []
