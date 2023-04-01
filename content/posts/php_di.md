@@ -2,7 +2,7 @@
 title: "PHP中的依赖注入容器"
 date: 2022-07-04T10:42:17+08:00
 description: "PHP中基于反射的依赖注入原理"
-tags: [依赖注入, 设计模式]
+tags: [依赖注入, 设计模式, PSR-11]
 featured_image: ""
 # images is optional, but needed for showing Twitter Card
 images: []
@@ -46,9 +46,9 @@ $classA = new ClassA($classB);
 
 在上面的示例中，ClassA 的构造函数需要一个 ClassB 的实例作为参数。这使得 ClassA 可以使用 ClassB 中的方法和属性。
 
-## 实现一个基于PHP反射机制实现的依赖注入容器，并实现`PSR-11`规范
+## 实现一个基于PHP反射机制的依赖注入容器
 
-上述逐个手工实例化依赖项的方法过于繁琐，不适合实际使用，下面是一个基于反射机制的简单实现：
+下面是一个基于反射机制的简单实现：
 
 ```php
 # file:Container.php
@@ -209,6 +209,24 @@ class Container implements ContainerInterface
     }
 }
 ```
+
+上述代码实现了 `PSR-11` 的 `ContainerInterface` 接口。它有以下几个主要的方法：
+
+1. `__construct()`：容器实例化时可以传入一组定义，以关联数组的形式保存在 `$definitions` 中。
+
+2. `set()`：向容器中添加新的定义。
+
+3. `get()`：获取 `$id` 对应的服务，如果服务不存在则抛出异常。如果服务已经被实例化，直接返回该实例，否则根据定义生成一个新的实例并返回。
+
+4. `has()`：检查容器中是否包含某个服务。
+
+5. `getService()`：根据不同类型的定义生成相应的服务实例。
+
+6. `buildInstance()`：根据给定的类名通过反射生成该类的实例。
+
+7. `getDependencies()`：根据构造函数的参数获取该函数的依赖项。
+
+该容器类可以根据传入的定义（即 `__construct()` 中的数组）或者 `set()` 方法添加的定义，通过 `get()` 方法实现对服务的管理和使用。它支持不同类型的定义，包括回调函数、类名和对象等。如果定义是一个回调函数，容器会执行该回调函数并返回其结果，如果是类名，则生成该类的实例，并通过依赖注入来自动解析其依赖项。
 
 ## 附录
 代码：[https://github.com/leolu9527/php/blob/main/src/Container/Container.php](https://github.com/leolu9527/php/blob/main/src/Container/Container.php)
