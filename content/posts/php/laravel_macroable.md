@@ -8,7 +8,7 @@ featured_image: ""
 images: []
 categories: PHP
 comment: false
-draft: true
+draft: false
 ---
 
 > Laravel 提供的 Macroable 可以在不改变类结构的情况为其扩展功能。
