@@ -1,6 +1,6 @@
 ---
-title: "ElasticSearch使用?"
-date: 2022-09-25T17:54:09+08:00
+title: "Nginx配置项"
+date: 2023-04-11T21:27:56+08:00
 description: ""
 tags: []
 featured_image: ""
@@ -11,6 +11,7 @@ comment: false
 draft: true
 ---
 
-## Reference
 
-1. https://www.zhihu.com/question/469207536/answer/2290001606
+## References
+
+1.https://learnku.com/articles/76390
